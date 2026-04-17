@@ -1,287 +1,419 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asbah Arshad | Web Developer</title>
 
-    <title>Asbah Arshad | Portfolio</title>
+```
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        body {
-            line-height: 1.6;
-            
-        }
+    body {
+        background: #f8fafc;
+        color: #1e293b;b;
+        overflow-x: hidden;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
 
-        /* Navbar */
+    section {
+        padding: 80px 0;
+    }
 
-        nav {
-            background: #222;
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-        }
+    .section-title {
+        font-size: 34px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* Navbar */
+
+    nav {
+        background: #ffffff;
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav h2 {
+        color: #2563eb;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    nav ul li {
+        margin-left: 30px;
+    }
+
+    nav ul li a {
+        color: #1e293b;
+        text-decoration: none;
+        transition: .3s;
+    }
+
+    nav ul li a:hover {
+        color: #2563eb;
+    }
+
+    .menu-btn {
+        display: none;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    /* Offcanvas */
+
+    .offcanvas {
+        position: fixed;
+        right: -260px;
+        top: 0;
+        width: 260px;
+        height: 100%;
+        background: #ffffff;
+        padding-top: 60px;
+        transition: .3s;
+        z-index: 2000;
+    }
+
+    .offcanvas.active {
+        right: 0;
+    }
+
+    .offcanvas ul {
+        list-style: none;
+    }
+
+    .offcanvas li {
+        padding: 15px 25px;
+    }
+
+    .offcanvas a {
+        color: #1e293b;
+        text-decoration: none;
+    }
+
+    /* Hero */
+
+    .hero {
+        padding: 120px 0;
+    }
+
+    .hero .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero span {
+        color: #2563eb;
+    }
+
+    .hero p {
+        margin: 20px 0;
+        color: #cbd5e1;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        background: #38bdf8;
+        color: black;
+        text-decoration: none;
+        border-radius: 6px;
+        display: inline-block;
+        transition: .3s;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+    }
+
+    .hero img {
+        width: 320px;
+        border-radius: 50%;
+    }
+
+    /* About */
+
+    .about p {
+        text-align: center;
+        max-width: 700px;
+        margin: auto;
+        color: #cbd5e1;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .skill {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        transition: .3s;
+    }
+
+    .skill:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Projects */
+
+    .project {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    .project h3 {
+        color: #2563eb;
+    }
+
+    .project p {
+        margin: 10px 0;
+        color: #cbd5e1;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    footer {
+        background: #f1f5f9;
+        text-align: center;
+        padding: 25px;
+    }
+
+    /* Responsive */
+
+    @media(max-width:768px) {
 
         nav ul {
-            display: flex;
-            list-style: none;
+            display: none;
         }
 
-        nav ul li {
-            margin-left: 20px;
+        .menu-btn {
+            display: block;
         }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Hero */
-
-        .hero {
-            padding: 80px 0;
+        .hero .container {
+            grid-template-columns: 1fr;
             text-align: center;
-            background: #f4f4f4;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr;
         }
 
         .hero h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
+            font-size: 32px;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #333;
-            color: white;
-            text-decoration: none;
-            margin-top: 15px;
-        }
-
-        /* Sections */
-
-        section {
-            padding: 60px 0;
-        }
-
-        .section-title {
-            margin-bottom: 20px;
-            font-size: 30px;
-        }
-
-        /* About */
-
-        .about p {
-            max-width: 600px;
-        }
-
-        /* Skills */
-
-        .skills ul {
-            list-style: none;
-        }
-
-        .skills li {
-            margin-bottom: 10px;
-        }
-
-        /* Projects */
-
-        .project-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        /* Contact */
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
-        }
-    </style>
+    }
+</style>
+```
 
 </head>
 
 <body>
 
-    <!-- Navbar -->
+```
+<!-- Offcanvas -->
 
-    <nav>
-        <div class="container">
-            <h2>Asbah</h2>
+<div class="offcanvas" id="menu">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
 
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- Navbar -->
 
-        </div>
-    </nav>
+<nav>
+    <div class="container">
+        <h2>Asbah</h2>
 
-    <!-- Hero -->
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <section class="hero" id="home">
-        <div class="container">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-            <h1>Hi, I'm Asbah Arshad</h1>
+<!-- Hero -->
 
-            <p>Web Developer | UI Designer</p>
+<section class="hero" id="home">
+    <div class="container">
 
+        <div>
+            <h1>Hi, I'm <span>Asbah Arshad</span></h1>
+            <p>Web Developer | Frontend Developer</p>
             <a href="#projects" class="btn">View Projects</a>
-
         </div>
-    </section>
 
-    <!-- About -->
-
-    <section class="about" id="about">
-        <div class="container">
-
-            <h2 class="section-title">About Me</h2>
-
-            <p>
-                I'm Asbah Arshad, a BSCS graduate and Web Developer.
-                I build responsive and user-friendly websites using HTML, CSS and JavaScript.
-            </p>
-
+        <div>
+            <img src="https://i.imgur.com/QIrZWGIs.jpg" alt="profile">
         </div>
-    </section>
 
-    <!-- Skills -->
+    </div>
+</section>
 
-    <section class="skills" id="skills">
-        <div class="container">
+<!-- About -->
 
-            <h2 class="section-title">Skills</h2>
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            Asbah Arshad is a BSCS graduate and Web Developer specializing in building modern, responsive and user-friendly websites using HTML, CSS, and JavaScript.
+        </p>
+    </div>
+</section>
 
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Responsive Design</li>
-                <li>Git & GitHub</li>
-            </ul>
+<!-- Skills -->
 
+<section id="skills">
+    <div class="container">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Responsive Design</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">UI Design</div>
         </div>
-    </section>
 
-    <!-- Projects -->
+    </div>
+</section>
 
-    <section class="projects" id="projects">
-        <div class="container">
+<!-- Projects -->
 
-            <h2 class="section-title">Projects</h2>
+<section id="projects">
+    <div class="container">
 
-            <div class="project-item">
-                <h3>Todo App</h3>
-                <p>Simple Todo App using JavaScript and LocalStorage</p>
-                <a href="#" class="btn">Live</a>
-                <a href="#" class="btn">GitHub</a>
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project">
+            <h3>E‑Learning Platform</h3>
+            <p>Built using PHP & MySQL with Admin, Instructor and Student roles. Includes course management, quiz system, and comment replies.</p>
+        </div>
+
+        <div class="project">
+            <h3>Todo App</h3>
+            <p>JavaScript Todo application using Local Storage with add, edit and delete features.</p>
+        </div>
+
+        <div class="project">
+            <h3>Weather App</h3>
+            <p>Weather application using API with city search and responsive layout.</p>
+        </div>
+
+        <div class="project">
+            <h3>Typing Speed Test</h3>
+            <p>Typing speed test using JavaScript with timer and speed calculation.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+    <div class="container">
+
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-grid">
+
+            <div>
+                <p>Email: malikasbah675@gmail.com</p>
+                <p>Phone: +92 340 3441705</p>
+                <p>Location: Khanewal, Pakistan</p>
             </div>
 
-            <div class="project-item">
-                <h3>Weather App</h3>
-                <p>Weather app using API</p>
-                <a href="#" class="btn">Live</a>
-                <a href="#" class="btn">GitHub</a>
-            </div>
-
-            <div class="project-item">
-                <h3>Typing Speed Test</h3>
-                <p>Typing speed test using JavaScript</p>
-                <a href="#" class="btn">Live</a>
-                <a href="#" class="btn">GitHub</a>
-            </div>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea rows="5" placeholder="Message"></textarea>
+                <button class="btn">Send</button>
+            </form>
 
         </div>
-    </section>
 
-    <!-- Contact -->
+    </div>
+</section>
 
-    <section class="contact" id="contact">
-        <div class="container">
+<footer>
+    <p>© 2026 Asbah Arshad</p>
+</footer>
 
-            <h2 class="section-title">Contact</h2>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h4>Email</h4>
-                        <a href="mailto:malikasbah@gmail.com">malikasbah675@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <h4>Phone</h4>
-                        <a href="tel:+1234567890">+92 340 3441705</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Location</h4>
-                        <p>[Khanewal, Punjab, Pakistan]</p>
-                    </div>
-                </div>
-
-                <form>
-
-                    <input type="text" placeholder="Your Name" required>
-
-                    <input type="email" placeholder="Your Email" required>
-
-                    <textarea rows="5" placeholder="Your Message"></textarea>
-
-                    <button class="btn">Send</button>
-
-                </form>
-
-            </div>
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>© 2026 Asbah Arshad</p>
-
-    </footer>
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("active");
+    }
+</script>
+```
 
 </body>
 

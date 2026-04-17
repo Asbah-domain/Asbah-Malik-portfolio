@@ -23,7 +23,7 @@ body {
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #6C63FF !important;
+    color: #0d6efd !important;
 }
 
 .nav-link {
@@ -32,28 +32,32 @@ body {
 }
 
 .nav-link:hover {
-    color: #6C63FF !important;
+    color: #0d6efd !important;
 }
 
 
 /* Hero */
 
 .hero {
-    background: #f8f9ff;
+    background: #f8f9fa;
     color: #333;
     padding: 100px 0;
 }
 
 .hero h1 {
-    color: #6C63FF;
+    color: #0d6efd;
+}
+
+.hero .lead {
+    color: #198754;
 }
 
 .hero p {
-    color: #555;
+    color: #6c757d;
 }
 
 
-/* Sections */
+/* Section */
 
 .section-padding {
     padding: 70px 0;
@@ -71,15 +75,38 @@ body {
     transition: 0.3s;
 }
 
-.card h4 {
-    color: #6C63FF;
+#skills h2 {
+    color: #0d6efd;
+}
+
+.card h4:nth-child(1) {
+    color: #0d6efd;
+}
+
+.card:nth-child(2) h4 {
+    color: #198754;
+}
+
+.card:nth-child(3) h4 {
+    color: #dc3545;
+}
+
+
+/* Projects */
+
+#projects h2 {
+    color: #6610f2;
+}
+
+#projects h3 {
+    color: #fd7e14;
 }
 
 
 /* Buttons */
 
 .btn-custom {
-    background: #6C63FF;
+    background: #0d6efd;
     border: none;
     border-radius: 30px;
     padding: 12px 30px;
@@ -87,34 +114,56 @@ body {
 }
 
 .btn-custom:hover {
-    background: #5146d8;
-    color: white;
+    background: #0b5ed7;
 }
 
 
-/* Project Section */
+/* About */
 
-#projects h3 {
-    color: #6C63FF;
+#about h2 {
+    color: #198754;
+}
+
+.badge:nth-child(1) {
+    background: #0d6efd !important;
+}
+
+.badge:nth-child(2) {
+    background: #198754 !important;
+}
+
+.badge:nth-child(3) {
+    background: #dc3545 !important;
 }
 
 
-/* About badges */
+/* Why Me */
 
-.badge {
-    padding: 8px 14px;
-    font-weight: 500;
+#why h2 {
+    color: #fd7e14;
 }
 
-.badge.bg-dark {
-    background: #6C63FF !important;
+#why h5 {
+    color: #6610f2;
 }
 
 
-/* Contact Section */
+/* Contact */
 
-#contact h5 {
-    color: #6C63FF;
+#contact h2 {
+    color: #0d6efd;
+}
+
+#contact h5:nth-child(1) {
+    color: #198754;
+}
+
+#contact h5:nth-child(2) {
+    color: #dc3545;
+}
+
+#contact h5:nth-child(3) {
+    color: #6610f2;
 }
 
 
@@ -122,7 +171,7 @@ body {
 
 footer {
     background: #f8f9fa;
-    color: #555;
+    color: #6c757d;
 }
 
 </style>
@@ -232,12 +281,7 @@ footer {
                             <h6>Modern UI</h6>
                         </div>
                     </div>
-
                 </div>
-
-                <a href="#" class="btn btn-dark me-3">Demo</a>
-                <a href="#" class="btn btn-outline-dark">Code</a>
-
             </div>
         </div>
 
@@ -292,24 +336,20 @@ footer {
 
             <div class="col-md-4 text-center">
                 <h5>Email</h5>
-                <p class="fs-5">asbaharshad@gmail.com</p>
+                <p class="fs-5">malikasbah675@gmail.com</p>
                 <a href="#" class="btn btn-dark">Email Me</a>
             </div>
 
             <div class="col-md-4 text-center">
                 <h5>Phone</h5>
-                <p class="fs-5">+92 300 1234567</p>
+                <p class="fs-5">+92 340 3441705</p>
                 <a href="#" class="btn btn-dark">Call Me</a>
             </div>
-
             <div class="col-md-4 text-center">
                 <h5>Location</h5>
                 <p class="fs-5">Multan, Pakistan</p>
-                <a href="#" class="btn btn-dark">WhatsApp</a>
             </div>
-
         </div>
-
     </div>
 
 </section>

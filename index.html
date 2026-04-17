@@ -7,37 +7,135 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body { overflow-x: hidden; }
-        .navbar { background: #212529 !important; }
-        .hero { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; 
-            padding: 100px 0;
+        :root {
+            /* ColorHunt Palette: https://colorhunt.co/palette/5b7e3ca2cb8be8f5bdc44545 */
+            --color1: #5B7E3C;  /* Dark Green */
+            --color2: #A2CB8B;  /* Light Green */
+            --color3: #E8F5BD;  /* Very Light Green */
+            --color4: #C44545;  /* Red */
         }
-        .section-padding { padding: 60px 0; }
-        .card-hover:hover { transform: translateY(-10px); transition: 0.3s; }
+        
+        body { 
+            overflow-x: hidden; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar { 
+            background: var(--color1) !important; 
+            box-shadow: 0 2px 10px rgba(91,126,60,0.3);
+        }
+        
+        .hero { 
+            background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 70%, var(--color4) 100%);
+            color: white; 
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+        
+        .section-padding { padding: 80px 0; }
+        .card-hover:hover { 
+            transform: translateY(-10px); 
+            transition: all 0.3s ease; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+        }
+        
         .btn-custom { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--color1), var(--color2));
             border: none; 
             border-radius: 30px;
-            padding: 12px 30px;
+            padding: 14px 35px;
             color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(91,126,60,0.4);
         }
-        .btn-custom:hover { color: white; transform: translateY(-2px); }
-        .navbar-brand { font-weight: bold; font-size: 1.5rem; }
-        .nav-link { font-weight: 500; }
+        .btn-custom:hover { 
+            color: white; 
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(91,126,60,0.6);
+        }
         
-        /* NEW PROJECT SECTION COLOR - Changed from bg-primary (blue) to bg-success (GREEN) */
+        .navbar-brand { 
+            font-weight: bold; 
+            font-size: 1.6rem;
+            color: white !important;
+        }
+        .nav-link { 
+            font-weight: 600; 
+            color: rgba(255,255,255,0.9) !important;
+            margin: 0 10px;
+        }
+        .nav-link:hover { color: white !important; }
+        
+        /* Project Section */
         #projects {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+            background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 100%);
+            color: white;
+            position: relative;
+        }
+        #projects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
         
-        /* Project feature cards - white background for contrast */
+        /* Feature cards */
         .project-feature {
             background: rgba(255,255,255,0.95) !important;
-            color: #212529 !important;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            color: var(--color1) !important;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.4s ease;
+        }
+        .project-feature:hover {
+            background: white !important;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        /* Skills cards */
+        .skill-card {
+            background: linear-gradient(145deg, var(--color3), white);
+            border: 1px solid var(--color2);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Contact section */
+        #contact {
+            background: linear-gradient(135deg, var(--color4) 0%, var(--color1) 70%);
+        }
+        
+        /* Why me section */
+        #why { background: var(--color3); }
+        
+        /* Footer */
+        footer { background: var(--color1); }
+        
+        /* Icons */
+        .section-icon {
+            background: linear-gradient(135deg, var(--color1), var(--color2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -63,90 +161,93 @@
 </nav>
 
 <!-- HERO -->
-<section id="home" class="hero text-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold mb-4">Hi! I'm Asbah Arshad</h1>
-        <p class="lead fs-3 mb-5">Web Developer | BSCS | Full-Stack Developer</p>
-        <p class="fs-4 mb-5">Building user-friendly, responsive web applications</p>
-        <a href="#projects" class="btn btn-custom btn-lg me-3">Projects</a>
-        <a href="#contact" class="btn btn-outline-light btn-lg">Contact</a>
+<section id="home" class="hero text-center position-relative">
+    <div class="container position-relative z-10">
+        <h1 class="display-3 fw-bold mb-5 animate__animated animate__fadeInDown">
+            Hi! I'm <span style="background: linear-gradient(135deg, var(--color3), white); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Asbah Arshad</span>
+        </h1>
+        <p class="lead fs-2 mb-4 animate__animated animate__fadeInUp">Web Developer | BSCS Graduate</p>
+        <p class="fs-4 mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+            Passionate about building responsive web apps that solve real problems
+        </p>
+        <div class="animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="#projects" class="btn btn-custom btn-lg me-3 px-5 py-3 fs-5">See Projects</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-5 py-3 fs-5">Contact Me</a>
+        </div>
     </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="bg-light section-padding">
+<section id="skills" class="section-padding">
     <div class="container">
-        <h2 class="text-center mb-5">My Skills</h2>
+        <h2 class="text-center mb-5 display-5 fw-bold" style="color: var(--color1);">My Skills</h2>
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="card card-hover border-0 shadow h-100 text-center p-4">
-                    <i class="bi bi-code-slash fs-1 text-primary mb-3"></i>
-                    <h4>Frontend</h4>
-                    <p class="fs-5">HTML, CSS, JavaScript</p>
+                <div class="card card-hover skill-card shadow-lg h-100 text-center p-5">
+                    <div class="section-icon">🌐</div>
+                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Frontend</h4>
+                    <p class="fs-4 fw-semibold mb-0">HTML, CSS, JavaScript</p>
+                    <small class="text-muted d-block mt-2">Interactive UIs</small>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card card-hover border-0 shadow h-100 text-center p-4">
-                    <i class="bi bi-diagram-3 fs-1 text-success mb-3"></i>
-                    <h4>Backend</h4>
-                    <p class="fs-5">Python</p>
+                <div class="card card-hover skill-card shadow-lg h-100 text-center p-5">
+                    <div class="section-icon">🐍</div>
+                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Backend</h4>
+                    <p class="fs-4 fw-semibold mb-0">Python</p>
+                    <small class="text-muted d-block mt-2">Server Logic</small>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card card-hover border-0 shadow h-100 text-center p-4">
-                    <i class="bi bi-layers fs-1 text-info mb-3"></i>
-                    <h4>Full-Stack</h4>
-                    <p class="fs-5">Complete Web Solutions</p>
+                <div class="card card-hover skill-card shadow-lg h-100 text-center p-5">
+                    <div class="section-icon">🔗</div>
+                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Full-Stack</h4>
+                    <p class="fs-4 fw-semibold mb-0">Complete Solutions</p>
+                    <small class="text-muted d-block mt-2">End-to-End</small>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FEATURED PROJECT - NEW GREEN COLOR -->
-<section id="projects" class="section-padding">
-    <div class="container">
-        <h2 class="text-center mb-5 text-white fw-bold display-5">Featured Project</h2>
+<!-- PROJECTS -->
+<section id="projects" class="position-relative">
+    <div class="container position-relative z-10">
+        <h2 class="text-center mb-5 display-4 fw-bold">Featured Project</h2>
         <div class="row text-center">
-            <div class="col-md-8 mx-auto">
-                <h3 class="text-white fw-bold mb-4 fs-1">E-Learning Platform</h3>
-                <p class="fs-3 text-white mb-5">Users discover, share, and enroll in courses</p>
+            <div class="col-lg-8 mx-auto">
+                <h3 class="fw-bold mb-4 fs-1 text-white">E-Learning Platform</h3>
+                <p class="fs-3 text-white mb-5 opacity-90">Discover, share, and enroll in courses</p>
                 
-                <!-- Feature cards with white background for contrast -->
-                <div class="row g-3 mb-5">
+                <div class="row g-4 mb-5">
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
-                            <i class="bi bi-person-check fs-2 text-success mb-2 d-block"></i>
-                            <h6 class="fw-bold">User Login</h6>
-                            <small>Secure authentication</small>
+                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
+                            <i class="bi bi-person-check-fill fs-2 text-success mb-3 d-block"></i>
+                            <h6 class="fw-bold mb-1">User Login</h6>
+                            <small>Secure auth</small>
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
-                            <i class="bi bi-share fs-2 text-success mb-2 d-block"></i>
-                            <h6 class="fw-bold">Course Sharing</h6>
-                            <small>Easy sharing</small>
+                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
+                            <i class="bi bi-share-fill fs-2 text-success mb-3 d-block"></i>
+                            <h6 class="fw-bold mb-1">Course Sharing</h6>
+                            <small>Easy upload</small>
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
-                            <i class="bi bi-phone fs-2 text-success mb-2 d-block"></i>
-                            <h6 class="fw-bold">Responsive</h6>
+                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
+                            <i class="bi bi-phone fs-2 text-success mb-3 d-block"></i>
+                            <h6 class="fw-bold mb-1">Responsive</h6>
                             <small>All devices</small>
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
-                            <i class="bi bi-ui-checks fs-2 text-success mb-2 d-block"></i>
-                            <h6 class="fw-bold">Modern UI</h6>
+                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
+                            <i class="bi bi-ui-checks-grid fs-2 text-success mb-3 d-block"></i>
+                            <h6 class="fw-bold mb-1">Modern UI</h6>
                             <small>Clean design</small>
                         </div>
                     </div>
-                </div>
-                
-                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-                    <a href="#" class="btn btn-light btn-lg px-5">Live Demo</a>
-                    <a href="#" class="btn btn-outline-light btn-lg px-5">View Code</a>
                 </div>
             </div>
         </div>
@@ -154,22 +255,23 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section-padding">
+<section id="about" class="section-padding bg-white">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h2 class="mb-4">What I Do</h2>
-                <p class="fs-4 mb-4">Dynamic web experiences with frontend and backend technologies.</p>
+                <h2 class="display-5 fw-bold mb-4" style="color: var(--color1);">What I Do</h2>
+                <p class="fs-4 mb-4 text-muted">I create dynamic web experiences using modern frontend and backend technologies to build complete solutions from start to finish.</p>
                 <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary fs-6 px-3 py-2">Responsive</span>
-                    <span class="badge bg-success fs-6 px-3 py-2">Full-Stack</span>
-                    <span class="badge bg-info fs-6 px-3 py-2">User-Friendly</span>
+                    <span class="badge bg-gradient" style="background: linear-gradient(var(--color1), var(--color2)); color: white;">Responsive</span>
+                    <span class="badge bg-gradient" style="background: linear-gradient(var(--color1), var(--color2)); color: white;">Full-Stack</span>
+                    <span class="badge bg-gradient" style="background: linear-gradient(var(--color1), var(--color2)); color: white;">User-First</span>
                 </div>
             </div>
             <div class="col-lg-6 text-center">
-                <div class="bg-gradient p-5 rounded-4 shadow-lg text-white mx-auto" style="max-width: 400px;">
-                    <i class="bi bi-rocket-takeoff fs-1 mb-3 d-block"></i>
-                    <h4>Ready for Projects!</h4>
+                <div class="bg-gradient p-5 rounded-4 shadow-xl mx-auto position-relative overflow-hidden" 
+                     style="max-width: 450px; background: linear-gradient(135deg, var(--color3), var(--color2));">
+                    <div class="section-icon" style="--webkit-text-fill-color: var(--color1);">🚀</div>
+                    <h4 class="fw-bold mb-0" style="color: var(--color1);">Ready for Projects!</h4>
                 </div>
             </div>
         </div>
@@ -177,29 +279,29 @@
 </section>
 
 <!-- WHY ME -->
-<section id="why" class="bg-light section-padding">
+<section id="why" class="section-padding">
     <div class="container">
-        <h2 class="text-center mb-5">Why Work With Me?</h2>
+        <h2 class="text-center mb-5 display-5 fw-bold" style="color: var(--color1);">Why Work With Me?</h2>
         <div class="row g-4">
             <div class="col-md-4 text-center">
-                <div class="card card-hover border-0 shadow p-4 h-100">
-                    <i class="bi bi-eye fs-2 text-primary mb-3 d-block"></i>
-                    <h5>Detail-Oriented</h5>
-                    <p class="fs-5">Code quality first</p>
+                <div class="card card-hover border-0 shadow-lg p-5 h-100 skill-card">
+                    <i class="bi bi-eye-fill fs-1 mb-3 d-block" style="color: var(--color1);"></i>
+                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Detail-Oriented</h4>
+                    <p class="fs-5 text-muted">Pixel-perfect code quality</p>
                 </div>
             </div>
             <div class="col-md-4 text-center">
-                <div class="card card-hover border-0 shadow p-4 h-100">
-                    <i class="bi bi-lightning-charge fs-2 text-success mb-3 d-block"></i>
-                    <h5>Problem Solver</h5>
-                    <p class="fs-5">Strong mindset</p>
+                <div class="card card-hover border-0 shadow-lg p-5 h-100 skill-card">
+                    <i class="bi bi-lightning-charge-fill fs-1 mb-3 d-block" style="color: var(--color1);"></i>
+                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Problem Solver</h4>
+                    <p class="fs-5 text-muted">Complex challenges solved</p>
                 </div>
             </div>
             <div class="col-md-4 text-center">
-                <div class="card card-hover border-0 shadow p-4 h-100">
-                    <i class="bi bi-book-half fs-2 text-info mb-3 d-block"></i>
-                    <h5>Always Learning</h5>
-                    <p class="fs-5">New technologies</p>
+                <div class="card card-hover border-0 shadow-lg p-5 h-100 skill-card">
+                    <i class="bi bi-book-half fs-1 mb-3 d-block" style="color: var(--color1);"></i>
+                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Always Learning</h4>
+                    <p class="fs-5 text-muted">Latest technologies</p>
                 </div>
             </div>
         </div>
@@ -207,48 +309,75 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section-padding" style="background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%); color: white;">
+<section id="contact">
     <div class="container">
-        <h2 class="text-center mb-5">Contact Me</h2>
+        <h2 class="text-center mb-5 display-5 fw-bold text-white py-5">Get In Touch</h2>
         <div class="row g-4 justify-content-center">
             <div class="col-md-4 text-center">
-                <i class="bi bi-envelope fs-1 text-light mb-3 d-block"></i>
-                <h5 class="fw-bold mb-2">Email</h5>
-                <p class="fs-4 mb-0">asbaharshad@gmail.com</p>
+                <div class="card border-0 bg-white bg-opacity-20 backdrop-blur-lg p-5 rounded-4 shadow-xl h-100">
+                    <i class="bi bi-envelope-fill fs-1 text-white mb-3 d-block"></i>
+                    <h5 class="fw-bold text-white mb-2 fs-4">Email</h5>
+                    <p class="fs-3 fw-semibold text-white mb-0">malikasbah675d@gmail.com</p>
+                </div>
             </div>
             <div class="col-md-4 text-center">
-                <i class="bi bi-telephone fs-1 text-light mb-3 d-block"></i>
-                <h5 class="fw-bold mb-2">Phone</h5>
-                <p class="fs-4 mb-0">+92 340 3441705</p>
+                <div class="card border-0 bg-white bg-opacity-20 backdrop-blur-lg p-5 rounded-4 shadow-xl h-100">
+                    <i class="bi bi-telephone-fill fs-1 text-white mb-3 d-block"></i>
+                    <h5 class="fw-bold text-white mb-2 fs-4">Phone</h5>
+                    <p class="fs-3 fw-semibold text-white mb-0">+92 340 3441705</p>
+               </div>
             </div>
             <div class="col-md-4 text-center">
-                <i class="bi bi-geo-alt fs-1 text-light mb-3 d-block"></i>
-                <h5 class="fw-bold mb-2">Location</h5>
-                <p class="fs-4 mb-0">Multan, Pakistan</p>   
+                <div class="card border-0 bg-white bg-opacity-20 backdrop-blur-lg p-5 rounded-4 shadow-xl h-100">
+                    <i class="bi bi-geo-alt-fill fs-1 text-white mb-3 d-block"></i>
+                    <h5 class="fw-bold text-white mb-2 fs-4">Location</h5>
+                    <p class="fs-3 fw-semibold text-white mb-0">Multan, Pakistan</p>
+                </div>
             </div>
         </div>
-        <div class="text-center mt-5">
-            <h3 class="fw-bold">Ready for challenging projects!</h3>
+        <div class="text-center mt-5 pt-5">
+            <h3 class="fw-bold display-6 text-white mb-4">Ready for your next project!</h3>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white text-center py-4">
+<footer class="text-center py-4">
     <div class="container">
-        <p class="mb-0">&copy; 2026 Asbah Arshad | Multan, Pakistan</p>
+        <p class="mb-0 text-white-50 fs-6">
+            &copy; 2026 Asbah Arshad | 
+            <span style="color: var(--color3);">Made with ❤️ in Multan, Pakistan</span>
+        </p>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    // Smooth scroll + navbar collapse on mobile
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+            
+            // Close mobile menu
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (window.innerWidth < 992) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
         });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(91, 126, 60, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
+        } else {
+            navbar.style.background = 'var(--color1)';
+            navbar.style.backdropFilter = 'none';
+        }
     });
 </script>
 

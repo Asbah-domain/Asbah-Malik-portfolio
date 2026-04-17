@@ -1,410 +1,300 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asbah Arshad | Web Developer</title>
-
-```
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        background: #f8fafc;
-        color: #1e293b;b;
-        overflow-x: hidden;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    section {
-        padding: 80px 0;
-    }
-
-    .section-title {
-        font-size: 34px;
-        margin-bottom: 40px;
-        text-align: center;
-    }
-
-    /* Navbar */
-
-    nav {
-        background: #ffffff;
-        padding: 18px 0;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        backdrop-filter: blur(10px);
-    }
-
-    nav .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    nav h2 {
-        color: #2563eb;
-    }
-
-    nav ul {
-        display: flex;
-        list-style: none;
-    }
-
-    nav ul li {
-        margin-left: 30px;
-    }
-
-    nav ul li a {
-        color: #1e293b;
-        text-decoration: none;
-        transition: .3s;
-    }
-
-    nav ul li a:hover {
-        color: #2563eb;
-    }
-
-    .menu-btn {
-        display: none;
-        font-size: 26px;
-        cursor: pointer;
-    }
-
-    /* Offcanvas */
-
-    .offcanvas {
-        position: fixed;
-        right: -260px;
-        top: 0;
-        width: 260px;
-        height: 100%;
-        background: #ffffff;
-        padding-top: 60px;
-        transition: .3s;
-        z-index: 2000;
-    }
-
-    .offcanvas.active {
-        right: 0;
-    }
-
-    .offcanvas ul {
-        list-style: none;
-    }
-
-    .offcanvas li {
-        padding: 15px 25px;
-    }
-
-    .offcanvas a {
-        color: #1e293b;
-        text-decoration: none;
-    }
-
-    /* Hero */
-
-    .hero {
-        padding: 120px 0;
-    }
-
-    .hero .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero span {
-        color: #2563eb;
-    }
-
-    .hero p {
-        margin: 20px 0;
-        color: #cbd5e1;
-    }
-
-    .btn {
-        padding: 12px 28px;
-        background: #38bdf8;
-        color: black;
-        text-decoration: none;
-        border-radius: 6px;
-        display: inline-block;
-        transition: .3s;
-    }
-
-    .btn:hover {
-        transform: translateY(-3px);
-    }
-
-    .hero img {
-        width: 320px;
-        border-radius: 50%;
-    }
-
-    /* About */
-
-    .about p {
-        text-align: center;
-        max-width: 700px;
-        margin: auto;
-        color: #cbd5e1;
-    }
-
-    /* Skills */
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-
-    .skill {
-        background: #ffffff;
-        padding: 25px;
-        border-radius: 10px;
-        text-align: center;
-        transition: .3s;
-    }
-
-    .skill:hover {
-        transform: translateY(-5px);
-    }
-
-    /* Projects */
-
-    .project {
-        background: #ffffff;
-        padding: 30px;
-        border-radius: 10px;
-        margin-bottom: 25px;
-    }
-
-    .project h3 {
-        color: #2563eb;
-    }
-
-    .project p {
-        margin: 10px 0;
-        color: #cbd5e1;
-    }
-
-    /* Contact */
-
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-
-    input,
-    textarea {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        border: none;
-    }
-
-    footer {
-        background: #f1f5f9;
-        text-align: center;
-        padding: 25px;
-    }
-
-    /* Responsive */
-
-    @media(max-width:768px) {
-        
-       .container {
-        width: 95%;
+    <title>Asbah Arshad - Web Developer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            overflow-x: hidden;
         }
-
-         {
-        flex-direction: column;
-        text-align: center;
+        section {
+            padding: 80px 0;
         }
-
-        nav ul {
-            display: none;
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0;
         }
-
-        .menu-btn {
-            display: block;
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
         }
-
-        .hero .container {
-            grid-template-columns: 1fr;
-            text-align: center;
+        .project-card {
+            transition: transform 0.3s;
         }
-
-        .contact-grid {
-            grid-template-columns: 1fr;
+        .project-card:hover {
+            transform: translateY(-10px);
         }
-
-        .hero h1 {
-            font-size: 32px;
+        .btn-custom {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
-    }
-</style>
-```
-
+        .btn-custom:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-
 <body>
 
-```
-<!-- Offcanvas -->
-
-<div class="offcanvas" id="menu">
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</div>
-
-<!-- Navbar -->
-
-<nav>
-    <div class="container">
-        <h2>Asbah</h2>
-
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- Hero -->
-
-<section class="hero" id="home">
-    <div class="container">
-
-        <div>
-            <h1>Hi, I'm <span>Asbah Arshad</span></h1>
-            <p>Web Developer | Frontend Developer</p>
-            <a href="#projects" class="btn">View Projects</a>
-        </div>
-    </div>
-</section>
-
-<!-- About -->
-
-<section id="about">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p>
-            Asbah Arshad is a BSCS graduate and Web Developer specializing in building modern, responsive and user-friendly websites using HTML, CSS, and JavaScript.
-        </p>
-    </div>
-</section>
-
-<!-- Skills -->
-
-<section id="skills">
-    <div class="container">
-
-        <h2 class="section-title">Skills</h2>
-
-        <div class="skills-grid">
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">Responsive Design</div>
-            <div class="skill">Python</div>
-        </div>
-
-    </div>
-</section>
-
-<!-- Projects -->
-
-<section id="projects">
-    <div class="container">
-
-        <h2 class="section-title">Projects</h2>
-
-        <div class="project">
-            <h3>E‑Learning Platform</h3>
-            <p>Built using PHP & MySQL with Admin, Instructor and Student roles. Includes course management, quiz system, and comment replies.</p>
-        </div>
-
-        <div class="project">
-            <h3>Weather App</h3>
-            <p>Weather application using API with city search and responsive layout.</p>
-        </div>
-
-        <div class="project">
-            <h3>Typing Speed Test</h3>
-            <p>Typing speed test using JavaScript with timer and speed calculation.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- Contact -->
-
-<section id="contact">
-    <div class="container">
-
-        <h2 class="section-title">Contact</h2>
-
-        <div class="contact-grid">
-
-            <div>
-                <p>Email: malikasbah675@gmail.com</p>
-                <p>Phone: +92 340 3441705</p>
-                <p>Location: Khanewal, Pakistan</p>
+    <!-- Navbar with Offcanvas for mobile -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold fs-3" href="#">Asbah Arshad 👋</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#about">Why Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+    </nav>
 
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Hi! I'm <span class="text-warning">Asbah Arshad</span></h1>
+                    <p class="lead mb-4 fs-4">Web Developer with a Bachelor's degree in Computer Science (BSCS). Passionate about building user-friendly, responsive web applications that solve real-world problems.</p>
+                    <a href="#projects" class="btn btn-custom btn-lg me-3">View Projects</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-img">
+                        <img src="https://via.placeholder.com/400x400/667eea/ffffff?text=Asbah" alt="Asbah Arshad" class="img-fluid rounded-circle shadow-lg" style="width: 300px; height: 300px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Asbah Arshad</p>
-</footer>
+    <!-- Skills Section -->
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="display-5 fw-bold">My Skills</h2>
+                    <p class="lead">Frontend Development: HTML, CSS, JavaScript</p>
+                    <p class="lead">Backend Development: Python</p>
+                    <p class="lead">Full-Stack Web Development</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🌐</div>
+                            <h5 class="card-title">Frontend</h5>
+                            <p class="card-text">HTML, CSS, JavaScript for creating dynamic and interactive user interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🐍</div>
+                            <h5 class="card-title">Backend</h5>
+                            <p class="card-text">Python for robust server-side logic and API development.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🔗</div>
+                            <h5 class="card-title">Full-Stack</h5>
+                            <p class="card-text">Complete web solutions from frontend to backend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-    function toggleMenu() {
-        document.getElementById("menu").classList.toggle("active");
-    }
-</script>
-```
+    <!-- What I Do Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">What I Do</h2>
+                    <p class="fs-4 mb-4">I specialize in creating dynamic and interactive web experiences. I have hands-on experience in both frontend and backend technologies, allowing me to build complete web solutions from the ground up.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/500x400/764ba2/f8f9fa?text=Web+Development" alt="Web Development" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Featured Project -->
+    <section id="projects" class="bg-primary text-white">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="display-4 fw-bold mb-4">Featured Project</h2>
+                    <p class="lead fs-3">E-Learning Course Sharing Platform</p>
+                    <p class="fs-5">A comprehensive web application designed to democratize online education. The platform enables users to discover, share, and enroll in courses across various domains. Built with a focus on user experience and accessibility.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card card border-0 shadow-lg h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon bg-white text-primary mb-3">🔐</div>
+                            <h5>User Authentication</h5>
+                            <p class="card-text">Secure login, registration, and profile management.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card card border-0 shadow-lg h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon bg-white text-primary mb-3">📚</div>
+                            <h5>Course Management</h5>
+                            <p class="card-text">Create, browse, and enroll in courses easily.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card card border-0 shadow-lg h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon bg-white text-primary mb-3">📱</div>
+                            <h5>Responsive Design</h5>
+                            <p class="card-text">Perfect on all devices - mobile, tablet, desktop.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-card card border-0 shadow-lg h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon bg-white text-primary mb-3">🎨</div>
+                            <h5>Intuitive UI</h5>
+                            <p class="card-text">Clean, modern interface for great UX.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-light btn-lg">View Live Demo</a>
+                <a href="#" class="btn btn-outline-light btn-lg ms-3">View Code</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Me -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2 class="display-5 fw-bold mb-4">Why Work With Me?</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center">
+                            <div class="feature-icon text-primary mb-3">🔍</div>
+                            <h5>Detail-Oriented</h5>
+                            <p class="card-text">Meticulous approach to code quality and pixel-perfect design.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center">
+                            <div class="feature-icon text-primary mb-3">🧠</div>
+                            <h5>Problem Solver</h5>
+                            <p class="card-text">Strong analytical mindset to tackle complex challenges.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center">
+                            <div class="feature-icon text-primary mb-3">📈</div>
+                            <h5>Continuous Learning</h5>
+                            <p class="card-text">Always learning new technologies and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <h3>Ready to take on challenging projects</h3>
+                <a href="mailto:asbah@example.com" class="btn btn-custom btn-lg mt-3">Let's Collaborate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Asbah Arshad. All rights reserved. | Made with ❤️ in Multan, Pakistan</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+    </script>
 </body>
-
 </html>

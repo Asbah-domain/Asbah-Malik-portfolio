@@ -3,411 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asbah Arshad - Web Developer Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Asbah Arshad - Web Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            overflow-x: hidden;
-        }
-        section {
-            padding: 80px 0;
-        }
-        .hero {
+        body { overflow-x: hidden; }
+        .navbar { background: #212529 !important; }
+        .hero { 
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 120px 0;
+            color: white; 
+            padding: 100px 0;
         }
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 24px;
-        }
-        .project-card {
-            transition: transform 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        .btn-custom {
+        .section-padding { padding: 60px 0; }
+        .card-hover:hover { transform: translateY(-10px); transition: 0.3s; }
+        .btn-custom { 
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
+            border: none; 
+            border-radius: 30px;
             padding: 12px 30px;
-            border-radius: 50px;
             color: white;
-            text-transform: uppercase;
-            font-weight: 500;
-            letter-spacing: 1px;
         }
-        .btn-custom:hover {
-            color: white;
-            transform: translateY(-2px);
-        }
-        .contact-info {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
+        .btn-custom:hover { color: white; transform: translateY(-2px); }
+        .navbar-brand { font-weight: bold; font-size: 1.5rem; }
+        .nav-link { font-weight: 500; }
     </style>
 </head>
 <body>
 
-    <!-- Navbar with Offcanvas for mobile - FIXED -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold fs-3" href="#"><i class="fas fa-code me-2"></i>Asbah Arshad</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Offcanvas Menu for Mobile -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                        <i class="fas fa-bars me-2"></i>Menu
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<!-- SIMPLE NAVBAR - WORKS 100% ON MOBILE -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Asbah Arshad</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Hi! I'm Asbah Arshad</h1>
+        <p class="lead fs-3 mb-5">Web Developer | BSCS | Full-Stack Developer</p>
+        <p class="fs-4 mb-5">Building user-friendly, responsive web applications</p>
+        <a href="#projects" class="btn btn-custom btn-lg me-3">Projects</a>
+        <a href="#contact" class="btn btn-outline-light btn-lg">Contact</a>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="bg-light section-padding">
+    <div class="container">
+        <h2 class="text-center mb-5">My Skills</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-hover border-0 shadow h-100 text-center p-4">
+                    <h4>Frontend</h4>
+                    <p class="fs-5">HTML, CSS, JavaScript</p>
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item mb-3">
-                            <a class="nav-link fw-bold fs-5" href="#home"><i class="fas fa-home me-2"></i>Home</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="nav-link fw-bold fs-5" href="#skills"><i class="fas fa-laptop-code me-2"></i>Skills</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="nav-link fw-bold fs-5" href="#projects"><i class="fas fa-project-diagram me-2"></i>Projects</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="nav-link fw-bold fs-5" href="#about"><i class="fas fa-user me-2"></i>About</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="nav-link fw-bold fs-5" href="#contact"><i class="fas fa-envelope me-2"></i>Contact</a>
-                        </li>
-                    </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-hover border-0 shadow h-100 text-center p-4">
+                    <h4>Backend</h4>
+                    <p class="fs-5">Python</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-hover border-0 shadow h-100 text-center p-4">
+                    <h4>Full-Stack</h4>
+                    <p class="fs-5">Complete Web Solutions</p>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section - IMAGE REMOVED -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-12 text-center">
-                    <h1 class="display-3 fw-bold mb-5 animate__animated animate__fadeInUp">
-                        Hi! I'm <span class="text-warning fs-2">Asbah Arshad</span>
-                    </h1>
-                    <p class="lead mb-5 fs-2 animate__animated animate__fadeInUp animate__delay-1s">
-                        Web Developer with a Bachelor's degree in Computer Science (BSCS). 
-                        Passionate about building user-friendly, responsive web applications that solve real-world problems.
-                    </p>
-                    <div class="animate__animated animate__fadeInUp animate__delay-2s">
-                        <a href="#projects" class="btn btn-custom btn-lg me-3 fs-5 px-5 py-3">View Projects</a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg fs-5 px-5 py-3">Get In Touch</a>
+<!-- PROJECTS -->
+<section id="projects" class="bg-primary text-white section-padding">
+    <div class="container">
+        <h2 class="text-center mb-5">Featured Project</h2>
+        <div class="row text-center">
+            <div class="col-md-8 mx-auto">
+                <h3>E-Learning Platform</h3>
+                <p class="fs-4 mb-4">Users discover, share, and enroll in courses</p>
+                <div class="row g-3 mb-5">
+                    <div class="col-6 col-md-3">
+                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
+                            <h6>User Login</h6>
+                        </div>
                     </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
+                            <h6>Course Sharing</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
+                            <h6>Responsive</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
+                            <h6>Modern UI</h6>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-light me-3">Demo</a>
+                <a href="#" class="btn btn-outline-light">Code</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4">What I Do</h2>
+                <p class="fs-4 mb-4">Dynamic web experiences with frontend and backend technologies.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-primary">Responsive</span>
+                    <span class="badge bg-success">Full-Stack</span>
+                    <span class="badge bg-info">User-Friendly</span>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="bg-light p-5 rounded-4 shadow">
+                    <h4>Ready for Projects!</h4>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="bg-light">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col">
-                    <h2 class="display-5 fw-bold mb-4">My Skills</h2>
+<!-- WHY ME -->
+<section id="why" class="bg-light section-padding">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Work With Me?</h2>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="card card-hover border-0 shadow p-4 h-100">
+                    <h5>Detail-Oriented</h5>
+                    <p>Code quality first</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <div class="feature-icon text-primary mb-4">
-                                <i class="fas fa-html5 fa-2x"></i>
-                            </div>
-                            <h4 class="card-title fw-bold">Frontend</h4>
-                            <p class="fs-5">HTML, CSS, JavaScript</p>
-                            <p class="card-text">Creating dynamic and interactive user interfaces.</p>
-                        </div>
-                    </div>
+            <div class="col-md-4 text-center">
+                <div class="card card-hover border-0 shadow p-4 h-100">
+                    <h5>Problem Solver</h5>
+                    <p>Strong mindset</p>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <div class="feature-icon text-success mb-4">
-                                <i class="fab fa-python fa-2x"></i>
-                            </div>
-                            <h4 class="card-title fw-bold">Backend</h4>
-                            <p class="fs-5">Python</p>
-                            <p class="card-text">Robust server-side logic and API development.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <div class="feature-icon text-info mb-4">
-                                <i class="fas fa-layer-group fa-2x"></i>
-                            </div>
-                            <h4 class="card-title fw-bold">Full-Stack</h4>
-                            <p class="fs-5">Complete Solutions</p>
-                            <p class="card-text">End-to-end web development from frontend to backend.</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card card-hover border-0 shadow p-4 h-100">
+                    <h5>Always Learning</h5>
+                    <p>New technologies</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- What I Do Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="display-5 fw-bold mb-4">What I Do</h2>
-                    <p class="fs-4 mb-4">I specialize in creating dynamic and interactive web experiences. I have hands-on experience in both frontend and backend technologies, allowing me to build complete web solutions from the ground up.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <span class="badge bg-primary fs-6 px-3 py-2">Responsive Design</span>
-                        <span class="badge bg-success fs-6 px-3 py-2">Full-Stack</span>
-                        <span class="badge bg-warning fs-6 px-3 py-2">User Focused</span>
-                        <span class="badge bg-info fs-6 px-3 py-2">Modern Tech</span>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="bg-gradient rounded-4 p-5 shadow-lg" style="height: 300px;">
-                        <i class="fas fa-rocket fa-5x text-primary mb-3"></i>
-                        <h4 class="text-primary fw-bold">Building the Future</h4>
-                    </div>
-                </div>
+<!-- CONTACT -->
+<section id="contact" class="section-padding bg-secondary text-white">
+    <div class="container">
+        <h2 class="text-center mb-5">Contact Me</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 text-center">
+                <h5><i class="bi bi-envelope"></i> Email</h5>
+                <p class="fs-4 mb-0">asbaharshad@gmail.com</p>
+                <a href="mailto:asbaharshad@gmail.com" class="btn btn-light mt-2">Email Me</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <h5><i class="bi bi-telephone"></i> Phone</h5>
+                <p class="fs-4 mb-0">+92 300 1234567</p>
+                <a href="tel:+923001234567" class="btn btn-light mt-2">Call Me</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <h5><i class="bi bi-geo-alt"></i> Location</h5>
+                <p class="fs-4 mb-0">Multan, Pakistan</p>
+                <a href="#" class="btn btn-light mt-2">WhatsApp</a>
             </div>
         </div>
-    </section>
-
-    <!-- Featured Project -->
-    <section id="projects" class="bg-primary text-white">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col">
-                    <h2 class="display-4 fw-bold mb-4">Featured Project</h2>
-                    <p class="lead fs-2 mb-3">E-Learning Course Sharing Platform</p>
-                    <p class="fs-4 mb-4">A comprehensive web application designed to democratize online education. Users can discover, share, and enroll in courses across various domains.</p>
-                </div>
-            </div>
-            <div class="row g-4 mb-5">
-                <div class="col-md-6 col-lg-3">
-                    <div class="project-card card border-0 bg-dark bg-opacity-25 h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="feature-icon bg-light text-primary mb-3 rounded-circle mx-auto">
-                                <i class="fas fa-user-shield fa-lg"></i>
-                            </div>
-                            <h5 class="fw-bold">User Authentication</h5>
-                            <p class="small">Secure login & profile management</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="project-card card border-0 bg-dark bg-opacity-25 h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="feature-icon bg-light text-primary mb-3 rounded-circle mx-auto">
-                                <i class="fas fa-book-open fa-lg"></i>
-                            </div>
-                            <h5 class="fw-bold">Course Management</h5>
-                            <p class="small">Create, browse & enroll</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="project-card card border-0 bg-dark bg-opacity-25 h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="feature-icon bg-light text-primary mb-3 rounded-circle mx-auto">
-                                <i class="fas fa-mobile-alt fa-lg"></i>
-                            </div>
-                            <h5 class="fw-bold">Responsive Design</h5>
-                            <p class="small">Works on all devices</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="project-card card border-0 bg-dark bg-opacity-25 h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="feature-icon bg-light text-primary mb-3 rounded-circle mx-auto">
-                                <i class="fas fa-palette fa-lg"></i>
-                            </div>
-                            <h5 class="fw-bold">Intuitive UI</h5>
-                            <p class="small">Clean modern design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="#" class="btn btn-light btn-lg me-3">Live Demo</a>
-                <a href="#" class="btn btn-outline-light btn-lg">View Code</a>
-            </div>
+        <div class="text-center mt-5">
+            <h4>Ready for challenging projects!</h4>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Why Work With Me -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col">
-                    <h2 class="display-5 fw-bold mb-4">Why Work With Me?</h2>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-lg hover-shadow">
-                        <div class="card-body text-center py-5">
-                            <i class="fas fa-eye fa-3x text-primary mb-4"></i>
-                            <h4 class="fw-bold mb-3">Detail-Oriented</h4>
-                            <p class="fs-5">Meticulous approach to code quality and pixel-perfect design.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-lg hover-shadow">
-                        <div class="card-body text-center py-5">
-                            <i class="fas fa-puzzle-piece fa-3x text-success mb-4"></i>
-                            <h4 class="fw-bold mb-3">Problem Solver</h4>
-                            <p class="fs-5">Strong analytical mindset to tackle complex challenges.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-lg hover-shadow">
-                        <div class="card-body text-center py-5">
-                            <i class="fas fa-graduation-cap fa-3x text-info mb-4"></i>
-                            <h4 class="fw-bold mb-3">Continuous Learning</h4>
-                            <p class="fs-5">Always learning new technologies and best practices.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p>&copy; 2026 Asbah Arshad. Multan, Pakistan</p>
+    </div>
+</footer>
 
-    <!-- Contact Section - NEW -->
-    <section id="contact" class="contact-info">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col">
-                    <h2 class="display-5 fw-bold mb-4">Contact Information</h2>
-                    <p class="lead fs-4">Let's work together on your next project!</p>
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 shadow h-100 text-center p-4">
-                        <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
-                        <h5 class="fw-bold mb-2">Email</h5>
-                        <p class="fs-5 mb-0">malikasbah675@gmail.com</p>
-                        <a href="mailto:asbaharshad@example.com" class="btn btn-outline-primary mt-3">Send Email</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 shadow h-100 text-center p-4">
-                        <i class="fas fa-phone fa-3x text-success mb-3"></i>
-                        <h5 class="fw-bold mb-2">Phone</h5>
-                        <p class="fs-5 mb-0">+92 340 3441705</p>
-                        <a href="tel:+923001234567" class="btn btn-outline-success mt-3">Call Now</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 shadow h-100 text-center p-4">
-                        <i class="fas fa-map-marker-alt fa-3x text-danger mb-3"></i>
-                        <h5 class="fw-bold mb-2">Location</h5>
-                        <p class="fs-5 mb-0">Multan, Punjab, Pakistan</p>
-                        <a href="https://maps.google.com/?q=Multan,Punjab,Pakistan" target="_blank" class="btn btn-outline-danger mt-3">View Map</a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-5">
-                <h4 class="fw-bold mb-3">Ready to take on challenging projects</h4>
-                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                    <a href="https://linkedin.com/in/asbaharshad" target="_blank" class="btn btn-primary px-4">
-                        <i class="fab fa-linkedin me-2"></i>LinkedIn
-                    </a>
-                    <a href="https://github.com/asbaharshad" target="_blank" class="btn btn-dark px-4">
-                        <i class="fab fa-github me-2"></i>GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p class="mb-2 fs-6">&copy; 2026 Asbah Arshad. All rights reserved.</p>
-            <p class="mb-0 small">Made with ❤️ in Multan, Pakistan | <a href="#home" class="text-white-50">Back to Top</a></p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        // Smooth scrolling navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close offcanvas on mobile after click
-                    const offcanvas = document.getElementById('offcanvasNavbar');
-                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
-                    if (bsOffcanvas) {
-                        bsOffcanvas.hide();
-                    }
-                }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
+    });
+</script>
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-        });
-
-        // Add hover effect to cards
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
 </body>
 </html>

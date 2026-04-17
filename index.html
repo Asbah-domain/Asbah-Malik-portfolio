@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asbah Arshad - Web Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            /* ColorHunt Palette: https://colorhunt.co/palette/5b7e3ca2cb8be8f5bdc44545 */
-            --color1: #5B7E3C;  /* Dark Green */
-            --color2: #A2CB8B;  /* Light Green */
-            --color3: #E8F5BD;  /* Very Light Green */
-            --color4: #C44545;  /* Red */
-        }
-        
-        body { 
-            overflow-x: hidden; 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
         }
         
-        .navbar { 
-            background: var(--color1) !important; 
-            box-shadow: 0 2px 10px rgba(91,126,60,0.3);
+        /* ColorHunt Palette */
+        :root {
+            --primary: #5B7E3C;
+            --secondary: #A2CB8B;
+            --light: #E8F5BD;
+            --accent: #C44545;
         }
         
-        .hero { 
-            background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 70%, var(--color4) 100%);
-            color: white; 
-            padding: 120px 0;
+        /* Navbar */
+        .navbar {
+            background: rgba(91, 126, 60, 0.95) !important;
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(91, 126, 60, 0.98) !important;
+        }
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white !important;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            transition: 0.3s;
+        }
+        .nav-link:hover { color: white !important; }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 60%, var(--accent) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
             position: relative;
             overflow: hidden;
         }
@@ -39,113 +65,177 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="1.5" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
         }
-        
-        .section-padding { padding: 80px 0; }
-        .card-hover:hover { 
-            transform: translateY(-10px); 
-            transition: all 0.3s ease; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
-        }
-        
-        .btn-custom { 
-            background: linear-gradient(135deg, var(--color1), var(--color2));
-            border: none; 
-            border-radius: 30px;
-            padding: 14px 35px;
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(91,126,60,0.4);
-        }
-        .btn-custom:hover { 
-            color: white; 
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(91,126,60,0.6);
-        }
-        
-        .navbar-brand { 
-            font-weight: bold; 
-            font-size: 1.6rem;
-            color: white !important;
-        }
-        .nav-link { 
-            font-weight: 600; 
-            color: rgba(255,255,255,0.9) !important;
-            margin: 0 10px;
-        }
-        .nav-link:hover { color: white !important; }
-        
-        /* Project Section */
-        #projects {
-            background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 100%);
-            color: white;
+        .hero-content {
             position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        #projects::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
         }
-        
-        /* Feature cards */
-        .project-feature {
-            background: rgba(255,255,255,0.95) !important;
-            color: var(--color1) !important;
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.4s ease;
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
         }
-        .project-feature:hover {
-            background: white !important;
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-        
-        /* Skills cards */
-        .skill-card {
-            background: linear-gradient(145deg, var(--color3), white);
-            border: 1px solid var(--color2);
-            border-radius: 20px;
+        .btn-main {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            box-shadow: 0 10px 30px rgba(91,126,60,0.4);
             transition: all 0.3s ease;
         }
-        
-        /* Contact section */
-        #contact {
-            background: linear-gradient(135deg, var(--color4) 0%, var(--color1) 70%);
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(91,126,60,0.6);
+            color: white;
         }
         
-        /* Why me section */
-        #why { background: var(--color3); }
-        
-        /* Footer */
-        footer { background: var(--color1); }
-        
-        /* Icons */
-        .section-icon {
-            background: linear-gradient(135deg, var(--color1), var(--color2));
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+        
+        /* Skills */
+        .skill-card {
+            background: linear-gradient(145deg, white, var(--light));
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid var(--secondary);
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(91,126,60,0.2);
+        }
+        .skill-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Projects */
+        .projects-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        .project-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .project-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+        .project-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        /* Features */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: white;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .contact-card:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-10px);
+        }
+        .contact-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section { padding: 60px 0; }
+            .hero { padding: 80px 0; }
+            .nav-link { margin: 0.5rem 0; }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
         }
     </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Asbah Arshad</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -160,209 +250,196 @@
     </div>
 </nav>
 
-<!-- HERO -->
-<section id="home" class="hero text-center position-relative">
-    <div class="container position-relative z-10">
-        <h1 class="display-3 fw-bold mb-5 animate__animated animate__fadeInDown">
-            Hi! I'm <span style="background: linear-gradient(135deg, var(--color3), white); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Asbah Arshad</span>
-        </h1>
-        <p class="lead fs-2 mb-4 animate__animated animate__fadeInUp">Web Developer | BSCS Graduate</p>
-        <p class="fs-4 mb-5 animate__animated animate__fadeInUp animate__delay-1s">
-            Passionate about building responsive web apps that solve real problems
-        </p>
-        <div class="animate__animated animate__fadeInUp animate__delay-2s">
-            <a href="#projects" class="btn btn-custom btn-lg me-3 px-5 py-3 fs-5">See Projects</a>
-            <a href="#contact" class="btn btn-outline-light btn-lg px-5 py-3 fs-5">Contact Me</a>
-        </div>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1 class="fade-in-up">Hi, I'm <span style="color: var(--light);">Asbah Arshad</span></h1>
+        <p class="fade-in-up">Web Developer | BSCS | Full-Stack Developer</p>
+        <p class="fade-in-up">Building responsive web applications that solve real-world problems</p>
+        <a href="#projects" class="btn-main fade-in-up">View My Work</a>
+        <a href="#contact" class="btn-main fade-in-up" style="background: transparent; border: 2px solid white; box-shadow: none;">Contact Me</a>
     </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section-padding">
+<!-- Skills Section -->
+<section id="skills" class="section py-5">
     <div class="container">
-        <h2 class="text-center mb-5 display-5 fw-bold" style="color: var(--color1);">My Skills</h2>
+        <h2 class="section-title">Skills</h2>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card card-hover skill-card shadow-lg h-100 text-center p-5">
-                    <div class="section-icon">🌐</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Frontend</h4>
-                    <p class="fs-4 fw-semibold mb-0">HTML, CSS, JavaScript</p>
-                    <small class="text-muted d-block mt-2">Interactive UIs</small>
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card fade-in-up">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Frontend</h3>
+                    <p>HTML • CSS • JavaScript</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card card-hover skill-card shadow-lg h-100 text-center p-5">
-                    <div class="section-icon">🐍</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Backend</h4>
-                    <p class="fs-4 fw-semibold mb-0">Python</p>
-                    <small class="text-muted d-block mt-2">Server Logic</small>
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card fade-in-up">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Backend</h3>
+                    <p>Python</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card card-hover skill-card shadow-lg h-100 text-center p-5">
-                    <div class="section-icon">🔗</div>
-                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Full-Stack</h4>
-                    <p class="fs-4 fw-semibold mb-0">Complete Solutions</p>
-                    <small class="text-muted d-block mt-2">End-to-End</small>
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card fade-in-up">
+                    <div class="skill-icon">🔗</div>
+                    <h3>Fullstack</h3>
+                    <p>Complete Web Solutions</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="position-relative">
-    <div class="container position-relative z-10">
-        <h2 class="text-center mb-5 display-4 fw-bold">Featured Project</h2>
-        <div class="row text-center">
-            <div class="col-lg-8 mx-auto">
-                <h3 class="fw-bold mb-4 fs-1 text-white">E-Learning Platform</h3>
-                <p class="fs-3 text-white mb-5 opacity-90">Discover, share, and enroll in courses</p>
-                
-                <div class="row g-4 mb-5">
-                    <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
-                            <i class="bi bi-person-check-fill fs-2 text-success mb-3 d-block"></i>
-                            <h6 class="fw-bold mb-1">User Login</h6>
-                            <small>Secure auth</small>
-                        </div>
+<!-- Projects Section -->
+<section id="projects" class="projects-section section">
+    <div class="container">
+        <h2 class="section-title" style="color: white; -webkit-text-fill-color: white;">Featured Project</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5">
+                    <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: var(--light);">E-Learning Platform</h1>
+                    <p style="font-size: 1.5rem; opacity: 0.9;">Course sharing & enrollment platform</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="project-card fade-in-up">
+                        <div class="project-icon">👤</div>
+                        <h4>User Login</h4>
+                        <p>Secure authentication system</p>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
-                            <i class="bi bi-share-fill fs-2 text-success mb-3 d-block"></i>
-                            <h6 class="fw-bold mb-1">Course Sharing</h6>
-                            <small>Easy upload</small>
-                        </div>
+                    <div class="project-card fade-in-up">
+                        <div class="project-icon">📚</div>
+                        <h4>Course Sharing</h4>
+                        <p>Easy course upload & sharing</p>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
-                            <i class="bi bi-phone fs-2 text-success mb-3 d-block"></i>
-                            <h6 class="fw-bold mb-1">Responsive</h6>
-                            <small>All devices</small>
-                        </div>
+                    <div class="project-card fade-in-up">
+                        <div class="project-icon">📱</div>
+                        <h4>Responsive</h4>
+                        <p>Works on all devices</p>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <div class="card card-hover project-feature shadow-xl h-100 p-4">
-                            <i class="bi bi-ui-checks-grid fs-2 text-success mb-3 d-block"></i>
-                            <h6 class="fw-bold mb-1">Modern UI</h6>
-                            <small>Clean design</small>
-                        </div>
+                    <div class="project-card fade-in-up">
+                        <div class="project-icon">🎨</div>
+                        <h4>Modern UI</h4>
+                        <p>Clean intuitive design</p>
                     </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn-main btn-lg px-5 me-3">Live Demo</a>
+                    <a href="#" class="btn-main btn-lg px-5" style="background: rgba(255,255,255,0.2); border: 2px solid white;">View Code</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section-padding bg-white">
+<!-- About Section -->
+<section id="about" class="section py-5 bg-light">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h2 class="display-5 fw-bold mb-4" style="color: var(--color1);">What I Do</h2>
-                <p class="fs-4 mb-4 text-muted">I create dynamic web experiences using modern frontend and backend technologies to build complete solutions from start to finish.</p>
-                <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-gradient" style="background: linear-gradient(var(--color1), var(--color2)); color: white;">Responsive</span>
-                    <span class="badge bg-gradient" style="background: linear-gradient(var(--color1), var(--color2)); color: white;">Full-Stack</span>
-                    <span class="badge bg-gradient" style="background: linear-gradient(var(--color1), var(--color2)); color: white;">User-First</span>
+                <h2 class="section-title mb-4">What I Do</h2>
+                <p class="lead fs-4 mb-4">I specialize in creating dynamic web applications using modern frontend and backend technologies. From design to deployment, I build complete solutions.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <span class="badge fs-6 px-4 py-2" style="background: linear-gradient(var(--primary), var(--secondary)); color: white;">Responsive Design</span>
+                    <span class="badge fs-6 px-4 py-2" style="background: linear-gradient(var(--primary), var(--secondary)); color: white;">Full-Stack</span>
+                    <span class="badge fs-6 px-4 py-2" style="background: linear-gradient(var(--primary), var(--secondary)); color: white;">User Focused</span>
                 </div>
             </div>
             <div class="col-lg-6 text-center">
-                <div class="bg-gradient p-5 rounded-4 shadow-xl mx-auto position-relative overflow-hidden" 
-                     style="max-width: 450px; background: linear-gradient(135deg, var(--color3), var(--color2));">
-                    <div class="section-icon" style="--webkit-text-fill-color: var(--color1);">🚀</div>
-                    <h4 class="fw-bold mb-0" style="color: var(--color1);">Ready for Projects!</h4>
+                <div class="p-5 bg-gradient rounded-4 shadow-lg" style="background: linear-gradient(135deg, var(--light), var(--secondary)); max-width: 400px; margin: 0 auto;">
+                    <i class="fas fa-rocket fa-4x mb-4" style="background: linear-gradient(var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                    <h3 style="color: var(--primary);">Ready For Projects</h3>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- WHY ME -->
-<section id="why" class="section-padding">
+<!-- Why Me -->
+<section id="why-me" class="section py-5">
     <div class="container">
-        <h2 class="text-center mb-5 display-5 fw-bold" style="color: var(--color1);">Why Work With Me?</h2>
+        <h2 class="section-title mb-5">Why Choose Me?</h2>
         <div class="row g-4">
-            <div class="col-md-4 text-center">
-                <div class="card card-hover border-0 shadow-lg p-5 h-100 skill-card">
-                    <i class="bi bi-eye-fill fs-1 mb-3 d-block" style="color: var(--color1);"></i>
-                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Detail-Oriented</h4>
-                    <p class="fs-5 text-muted">Pixel-perfect code quality</p>
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card text-center p-5 fade-in-up">
+                    <i class="fas fa-eye fa-3x mb-4" style="color: var(--primary);"></i>
+                    <h4 style="color: var(--primary);">Detail Oriented</h4>
+                    <p>Pixel perfect code quality</p>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="card card-hover border-0 shadow-lg p-5 h-100 skill-card">
-                    <i class="bi bi-lightning-charge-fill fs-1 mb-3 d-block" style="color: var(--color1);"></i>
-                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Problem Solver</h4>
-                    <p class="fs-5 text-muted">Complex challenges solved</p>
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card text-center p-5 fade-in-up">
+                    <i class="fas fa-brain fa-3x mb-4" style="color: var(--primary);"></i>
+                    <h4 style="color: var(--primary);">Problem Solver</h4>
+                    <p>Complex challenges solved</p>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="card card-hover border-0 shadow-lg p-5 h-100 skill-card">
-                    <i class="bi bi-book-half fs-1 mb-3 d-block" style="color: var(--color1);"></i>
-                    <h4 class="fw-bold mb-3" style="color: var(--color1);">Always Learning</h4>
-                    <p class="fs-5 text-muted">Latest technologies</p>
+            <div class="col-lg-4 col-md-6">
+                <div class="skill-card text-center p-5 fade-in-up">
+                    <i class="fas fa-graduation-cap fa-3x mb-4" style="color: var(--primary);"></i>
+                    <h4 style="color: var(--primary);">Always Learning</h4>
+                    <p>Latest technologies</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
+<!-- Contact -->
+<section id="contact" class="contact-section section">
     <div class="container">
-        <h2 class="text-center mb-5 display-5 fw-bold text-white py-5">Get In Touch</h2>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-4 text-center">
-                <div class="card border-0 bg-white bg-opacity-20 backdrop-blur-lg p-5 rounded-4 shadow-xl h-100">
-                    <i class="bi bi-envelope-fill fs-1 text-white mb-3 d-block"></i>
-                    <h5 class="fw-bold text-white mb-2 fs-4">Email</h5>
-                    <p class="fs-3 fw-semibold text-white mb-0">malikasbah675d@gmail.com</p>
+        <h2 class="section-title mb-5" style="color: white;">Contact Information</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-card fade-in-up">
+                    <div class="contact-icon">✉️</div>
+                    <h4 class="mb-3">Email</h4>
+                    <p class="fs-4 fw-bold mb-4">asbaharshad@gmail.com</p>
+                    <a href="mailto:asbaharshad@gmail.com" class="btn-main">Send Email</a>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="card border-0 bg-white bg-opacity-20 backdrop-blur-lg p-5 rounded-4 shadow-xl h-100">
-                    <i class="bi bi-telephone-fill fs-1 text-white mb-3 d-block"></i>
-                    <h5 class="fw-bold text-white mb-2 fs-4">Phone</h5>
-                    <p class="fs-3 fw-semibold text-white mb-0">+92 340 3441705</p>
-               </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-card fade-in-up">
+                    <div class="contact-icon">📞</div>
+                    <h4 class="mb-3">Phone</h4>
+                    <p class="fs-4 fw-bold mb-4">+92 300 1234567</p>
+                    <a href="tel:+923001234567" class="btn-main">Call Me</a>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="card border-0 bg-white bg-opacity-20 backdrop-blur-lg p-5 rounded-4 shadow-xl h-100">
-                    <i class="bi bi-geo-alt-fill fs-1 text-white mb-3 d-block"></i>
-                    <h5 class="fw-bold text-white mb-2 fs-4">Location</h5>
-                    <p class="fs-3 fw-semibold text-white mb-0">Multan, Pakistan</p>
+            <div class="col-lg-4 col-md-6">
+                <div class="contact-card fade-in-up">
+                    <div class="contact-icon">📍</div>
+                    <h4 class="mb-3">Location</h4>
+                    <p class="fs-4 fw-bold mb-4">Multan, Pakistan</p>
+                    <a href="https://wa.me/923001234567" class="btn-main" style="background: #25D366; border: none;">WhatsApp</a>
                 </div>
             </div>
         </div>
         <div class="text-center mt-5 pt-5">
-            <h3 class="fw-bold display-6 text-white mb-4">Ready for your next project!</h3>
+            <h2 class="display-4 fw-bold mb-4" style="color: var(--light);">Ready for challenging projects!</h2>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="text-center py-4">
+<!-- Footer -->
+<footer>
     <div class="container">
-        <p class="mb-0 text-white-50 fs-6">
-            &copy; 2026 Asbah Arshad | 
-            <span style="color: var(--color3);">Made with ❤️ in Multan, Pakistan</span>
-        </p>
+        <p>&copy; 2026 Asbah Arshad. Made with ❤️ in Multan, Pakistan</p>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Smooth scroll + navbar collapse on mobile
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // Smooth scrolling and navbar collapse
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(link.getAttribute('href'));
             target.scrollIntoView({ behavior: 'smooth' });
             
             // Close mobile menu
-            const navbarCollapse = document.getElementById('navbarNav');
-            if (window.innerWidth < 992) {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
                 new bootstrap.Collapse(navbarCollapse).hide();
             }
         });
@@ -371,13 +448,25 @@
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(91, 126, 60, 0.95)';
-            navbar.style.backdropFilter = 'blur(20px)';
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'var(--color1)';
-            navbar.style.backdropFilter = 'none';
+            navbar.classList.remove('scrolled');
         }
+    });
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = '0.2s';
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    });
+
+    document.querySelectorAll('.skill-card, .project-card, .contact-card').forEach(el => {
+        observer.observe(el);
     });
 </script>
 

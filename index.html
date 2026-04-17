@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Asbah Arshad | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navbar */
+
+        nav {
+            background: #222;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: #f4f4f4;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        /* About */
+
+        .about p {
+            max-width: 600px;
+        }
+
+        /* Skills */
+
+        .skills ul {
+            list-style: none;
+        }
+
+        .skills li {
+            margin-bottom: 10px;
+        }
+
+        /* Projects */
+
+        .project-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Contact */
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+        <div class="container">
+            <h2>Asbah</h2>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero" id="home">
+        <div class="container">
+
+            <h1>Hi, I'm Asbah Arshad</h1>
+
+            <p>Web Developer | UI Designer</p>
+
+            <a href="#projects" class="btn">View Projects</a>
+
+        </div>
+    </section>
+
+    <!-- About -->
+
+    <section class="about" id="about">
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <p>
+                I'm Asbah Arshad, a BSCS graduate and Web Developer.
+                I build responsive and user-friendly websites using HTML, CSS and JavaScript.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Skills -->
+
+    <section class="skills" id="skills">
+        <div class="container">
+
+            <h2 class="section-title">Skills</h2>
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+                <li>Git & GitHub</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <!-- Projects -->
+
+    <section class="projects" id="projects">
+        <div class="container">
+
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-item">
+                <h3>Todo App</h3>
+                <p>Simple Todo App using JavaScript and LocalStorage</p>
+                <a href="#" class="btn">Live</a>
+                <a href="#" class="btn">GitHub</a>
+            </div>
+
+            <div class="project-item">
+                <h3>Weather App</h3>
+                <p>Weather app using API</p>
+                <a href="#" class="btn">Live</a>
+                <a href="#" class="btn">GitHub</a>
+            </div>
+
+            <div class="project-item">
+                <h3>Typing Speed Test</h3>
+                <p>Typing speed test using JavaScript</p>
+                <a href="#" class="btn">Live</a>
+                <a href="#" class="btn">GitHub</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+
+    <section class="contact" id="contact">
+        <div class="container">
+
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <a href="mailto:malikasbah@gmail.com">malikasbah675@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <a href="tel:+1234567890">+92 340 3441705</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>[Khanewal, Punjab, Pakistan]</p>
+                    </div>
+                </div>
+
+                <form>
+
+                    <input type="text" placeholder="Your Name" required>
+
+                    <input type="email" placeholder="Your Email" required>
+
+                    <textarea rows="5" placeholder="Your Message"></textarea>
+
+                    <button class="btn">Send</button>
+
+                </form>
+
+            </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Asbah Arshad</p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asbah Arshad - Web Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body { overflow-x: hidden; }
         .navbar { background: #212529 !important; }
@@ -25,11 +26,24 @@
         .btn-custom:hover { color: white; transform: translateY(-2px); }
         .navbar-brand { font-weight: bold; font-size: 1.5rem; }
         .nav-link { font-weight: 500; }
+        
+        /* NEW PROJECT SECTION COLOR - Changed from bg-primary (blue) to bg-success (GREEN) */
+        #projects {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+        }
+        
+        /* Project feature cards - white background for contrast */
+        .project-feature {
+            background: rgba(255,255,255,0.95) !important;
+            color: #212529 !important;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 <body>
 
-<!-- SIMPLE NAVBAR - WORKS 100% ON MOBILE -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Asbah Arshad</a>
@@ -66,18 +80,21 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="card card-hover border-0 shadow h-100 text-center p-4">
+                    <i class="bi bi-code-slash fs-1 text-primary mb-3"></i>
                     <h4>Frontend</h4>
                     <p class="fs-5">HTML, CSS, JavaScript</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card card-hover border-0 shadow h-100 text-center p-4">
+                    <i class="bi bi-diagram-3 fs-1 text-success mb-3"></i>
                     <h4>Backend</h4>
                     <p class="fs-5">Python</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card card-hover border-0 shadow h-100 text-center p-4">
+                    <i class="bi bi-layers fs-1 text-info mb-3"></i>
                     <h4>Full-Stack</h4>
                     <p class="fs-5">Complete Web Solutions</p>
                 </div>
@@ -86,35 +103,50 @@
     </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="bg-primary text-white section-padding">
+<!-- FEATURED PROJECT - NEW GREEN COLOR -->
+<section id="projects" class="section-padding">
     <div class="container">
-        <h2 class="text-center mb-5">Featured Project</h2>
+        <h2 class="text-center mb-5 text-white fw-bold display-5">Featured Project</h2>
         <div class="row text-center">
             <div class="col-md-8 mx-auto">
-                <h3>E-Learning Platform</h3>
-                <p class="fs-4 mb-4">Users discover, share, and enroll in courses</p>
+                <h3 class="text-white fw-bold mb-4 fs-1">E-Learning Platform</h3>
+                <p class="fs-3 text-white mb-5">Users discover, share, and enroll in courses</p>
+                
+                <!-- Feature cards with white background for contrast -->
                 <div class="row g-3 mb-5">
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
-                            <h6>User Login</h6>
+                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
+                            <i class="bi bi-person-check fs-2 text-success mb-2 d-block"></i>
+                            <h6 class="fw-bold">User Login</h6>
+                            <small>Secure authentication</small>
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
-                            <h6>Course Sharing</h6>
+                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
+                            <i class="bi bi-share fs-2 text-success mb-2 d-block"></i>
+                            <h6 class="fw-bold">Course Sharing</h6>
+                            <small>Easy sharing</small>
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
-                            <h6>Responsive</h6>
+                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
+                            <i class="bi bi-phone fs-2 text-success mb-2 d-block"></i>
+                            <h6 class="fw-bold">Responsive</h6>
+                            <small>All devices</small>
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <div class="card card-hover bg-dark bg-opacity-50 border-0 p-3">
-                            <h6>Modern UI</h6>
+                        <div class="card card-hover project-feature shadow-lg border-0 p-4 h-100">
+                            <i class="bi bi-ui-checks fs-2 text-success mb-2 d-block"></i>
+                            <h6 class="fw-bold">Modern UI</h6>
+                            <small>Clean design</small>
                         </div>
                     </div>
+                </div>
+                
+                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                    <a href="#" class="btn btn-light btn-lg px-5">Live Demo</a>
+                    <a href="#" class="btn btn-outline-light btn-lg px-5">View Code</a>
                 </div>
             </div>
         </div>
@@ -129,13 +161,14 @@
                 <h2 class="mb-4">What I Do</h2>
                 <p class="fs-4 mb-4">Dynamic web experiences with frontend and backend technologies.</p>
                 <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary">Responsive</span>
-                    <span class="badge bg-success">Full-Stack</span>
-                    <span class="badge bg-info">User-Friendly</span>
+                    <span class="badge bg-primary fs-6 px-3 py-2">Responsive</span>
+                    <span class="badge bg-success fs-6 px-3 py-2">Full-Stack</span>
+                    <span class="badge bg-info fs-6 px-3 py-2">User-Friendly</span>
                 </div>
             </div>
             <div class="col-lg-6 text-center">
-                <div class="bg-light p-5 rounded-4 shadow">
+                <div class="bg-gradient p-5 rounded-4 shadow-lg text-white mx-auto" style="max-width: 400px;">
+                    <i class="bi bi-rocket-takeoff fs-1 mb-3 d-block"></i>
                     <h4>Ready for Projects!</h4>
                 </div>
             </div>
@@ -150,20 +183,23 @@
         <div class="row g-4">
             <div class="col-md-4 text-center">
                 <div class="card card-hover border-0 shadow p-4 h-100">
+                    <i class="bi bi-eye fs-2 text-primary mb-3 d-block"></i>
                     <h5>Detail-Oriented</h5>
-                    <p>Code quality first</p>
+                    <p class="fs-5">Code quality first</p>
                 </div>
             </div>
             <div class="col-md-4 text-center">
                 <div class="card card-hover border-0 shadow p-4 h-100">
+                    <i class="bi bi-lightning-charge fs-2 text-success mb-3 d-block"></i>
                     <h5>Problem Solver</h5>
-                    <p>Strong mindset</p>
+                    <p class="fs-5">Strong mindset</p>
                 </div>
             </div>
             <div class="col-md-4 text-center">
                 <div class="card card-hover border-0 shadow p-4 h-100">
+                    <i class="bi bi-book-half fs-2 text-info mb-3 d-block"></i>
                     <h5>Always Learning</h5>
-                    <p>New technologies</p>
+                    <p class="fs-5">New technologies</p>
                 </div>
             </div>
         </div>
@@ -171,25 +207,28 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section-padding bg-secondary text-white">
+<section id="contact" class="section-padding" style="background: linear-gradient(135deg, #6f42c1 0%, #d63384 100%); color: white;">
     <div class="container">
         <h2 class="text-center mb-5">Contact Me</h2>
         <div class="row g-4 justify-content-center">
             <div class="col-md-4 text-center">
-                <h5><i class="bi bi-envelope"></i> Email</h5>
-                <p class="fs-4 mb-0">malikasbah675@gmail.com</p>
+                <i class="bi bi-envelope fs-1 text-light mb-3 d-block"></i>
+                <h5 class="fw-bold mb-2">Email</h5>
+                <p class="fs-4 mb-0">asbaharshad@gmail.com</p>
             </div>
             <div class="col-md-4 text-center">
-                <h5><i class="bi bi-telephone"></i> Phone</h5>
+                <i class="bi bi-telephone fs-1 text-light mb-3 d-block"></i>
+                <h5 class="fw-bold mb-2">Phone</h5>
                 <p class="fs-4 mb-0">+92 340 3441705</p>
             </div>
             <div class="col-md-4 text-center">
-                <h5><i class="bi bi-geo-alt"></i> Location</h5>
-                <p class="fs-4 mb-0">Multan, Pakistan</p>
+                <i class="bi bi-geo-alt fs-1 text-light mb-3 d-block"></i>
+                <h5 class="fw-bold mb-2">Location</h5>
+                <p class="fs-4 mb-0">Multan, Pakistan</p>   
             </div>
         </div>
         <div class="text-center mt-5">
-            <h4>Ready for challenging projects!</h4>
+            <h3 class="fw-bold">Ready for challenging projects!</h3>
         </div>
     </div>
 </section>
@@ -197,13 +236,12 @@
 <!-- FOOTER -->
 <footer class="bg-dark text-white text-center py-4">
     <div class="container">
-        <p>&copy; 2026 Asbah Arshad. Multan, Pakistan</p>
+        <p class="mb-0">&copy; 2026 Asbah Arshad | Multan, Pakistan</p>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();

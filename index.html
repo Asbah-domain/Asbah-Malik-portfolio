@@ -126,29 +126,27 @@ body {
 }
 
 /* SKILLS CIRCLE FIX */
-/* =========================
-   MOBILE SKILLS FIX (IMPORTANT)
-========================= */
-@media (max-width: 768px) {
+.skills-circle {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    animation: rotate 15s linear infinite;
+    max-width: 100%;
+}
 
-    .skills-circle {
-        width: 100%;
-        height: auto;
-        animation: none; /* stop rotation on mobile */
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        justify-items: center;
-        align-items: center;
-    }
-
-    .skill-item {
-        position: static !important;
-        width: 120px;
-        height: 120px;
-        font-size: 14px;
-        border-radius: 50%;
-    }
+/* SKILL ITEMS */
+.skill-item {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
 
 /* COLORS + POSITION */
 .skill1 { top: 0; left: 150px; background:#CE2626; }

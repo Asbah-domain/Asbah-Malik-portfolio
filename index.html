@@ -152,6 +152,78 @@ body {
     color: #6610f2;
 }
 
+/* Floating Skills Circle */
+
+.skills-circle {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    animation: rotate 15s linear infinite;
+}
+
+.skill-item {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Circle Colors */
+
+.skill1 { 
+top: 0; 
+left: 150px; 
+background: #CE2626;
+}
+
+.skill2 { 
+top: 150px; 
+left: 0; 
+background: #7FB77E;
+}
+
+.skill3 { 
+top: 150px; 
+right: 0; 
+background: #D12052;
+}
+
+.skill4 { 
+bottom: 0; 
+left: 150px; 
+background: #1A3263;
+}
+
+.skill5 { 
+top: 150px; 
+left: 150px; 
+background: #9B0F06;
+}
+/* Position around circle */
+
+.skill1 { top: 0; left: 150px; }
+.skill2 { top: 150px; left: 0; }
+.skill3 { top: 150px; right: 0; }
+.skill4 { bottom: 0; left: 150px; }
+.skill5 { top: 150px; left: 150px; background:#0d6efd; color:white;}
+
+/* Rotate animation */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 /* Contact */
 
@@ -223,34 +295,16 @@ footer p {
 
 <!-- SKILLS -->
 <section id="skills" class="light-section section-padding">
-    <div class="container">
-        <h2 class="text-center mb-5">My Skills</h2>
-
-        <div class="row g-4">
-
-            <div class="col-md-4">
-                <div class="card card-hover border-0 shadow h-100 text-center p-4">
-                    <h4>Frontend</h4>
-                    <p class="fs-5">HTML, CSS, JavaScript</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-hover border-0 shadow h-100 text-center p-4">
-                    <h4>Backend</h4>
-                    <p class="fs-5">Python</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-hover border-0 shadow h-100 text-center p-4">
-                    <h4>Full-Stack</h4>
-                    <p class="fs-5">Complete Web Solutions</p>
-                </div>
-            </div>
-
-        </div>
+ <div class="container">
+    <h2 class="text-center mb-5">My Skills</h2>
+    <div class="skills-circle">
+         <div class="skill-item skill1">HTML</div>
+         <div class="skill-item skill2">CSS</div>
+         <div class="skill-item skill3">JavaScript</div>
+         <div class="skill-item skill4">Bootstrap</div>
+         <div class="skill-item skill5">Python</div>
     </div>
+</div>
 </section>
 
 <!-- PROJECTS -->
